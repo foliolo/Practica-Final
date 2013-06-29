@@ -1,16 +1,14 @@
 package uax.practica.musica;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 /**
- * Clase principal de entrada al programa
+ * Clase CD que hereda de Música y añade la propiedad: número de canciones. 
  * @version v0.1 	25 Junio 2013
  * @author Alberto Hidalgo
  */
 public class CD extends Musica {
 	private int numCanciones;
-	private Scanner read = new Scanner(System.in);
 	
 	public CD(){
 		super();
