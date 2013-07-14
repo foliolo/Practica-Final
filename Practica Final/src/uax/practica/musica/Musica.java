@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @version v0.1 	Fecha: 24/6/13
  * @author Alberto Hidalgo
  */
-public class Musica {
+public abstract class Musica {
 	/** Variables */
 	private String album;
 	private String autor;
@@ -21,14 +21,13 @@ public class Musica {
 	Scanner read = new Scanner(System.in);
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MMMMM/yyyy");
 	
-	/** Constructor vacío que inicializa las variables de la clase pidiéndoselas al usuario
-	 */
+	/** Constructor vacío que inicializa las variables de la clase pidiéndoselas al usuario*/
 	public Musica(){
 		boolean fallo;
 		Calendar fecha = Calendar.getInstance();
 		//fecha.setLenient(false);
 		
-		System.out.println("\tIntroduce el nombre del Album: ");
+		System.out.println("\tIntroduce el nombre del album: ");
 		setAlbum(read.nextLine().trim());
 		System.out.println("\tIntroduce el autor: ");
 		setAutor(read.nextLine().trim());
@@ -118,16 +117,10 @@ public class Musica {
 		this.precio = precio;
 	}
 	
-	public boolean equals(Musica m){
-		if(m instanceof Musica){
-			if( getAlbum().equals(m.getAlbum()) && getAutor().equals(m.getAutor()))
-				return true;
-		}
-		return false;
-	}
+	public abstract boolean equals(Musica m);
 	
 	public String imprimir(){
-		String cad = "Musica\n";
+		String cad = "Música\n";
 		DecimalFormat df = new DecimalFormat("#.##");
 		
 		cad += 	"\tAlbum: " + getAlbum() + "\n" +

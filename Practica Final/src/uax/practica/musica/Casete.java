@@ -1,5 +1,11 @@
 package uax.practica.musica;
 
+
+/**
+ * Clase Casete que hereda de Música y añade la propiedad: número de canciones por ambas caras. 
+ * @version v0.1 	25 Junio 2013
+ * @author Alberto Hidalgo
+ */
 public class Casete extends Musica {
 	private int numCancionesA;
 	private int numCancionesB;
@@ -9,19 +15,33 @@ public class Casete extends Musica {
 		super();
 		boolean fallo = false;
 		do{
+//			try{
+//				System.out.println("\tIntroduce el número de canciones de la cara A: ");
+//				setNumCancionesA(read.nextInt());
+//				
+//				System.out.println("\tIntroduce el número de canciones de la cara B: ");
+//				setNumCancionesB(read.nextInt());
+//				fallo = false;
+//			}
+//			catch(NumberFormatException ex){
+//				System.out.println("\tDebe introducir un número correcto:");
+//				fallo = true;
+//			}
 			try{
 				System.out.println("\tIntroduce el número de canciones de la cara A: ");
-				setNumCancionesA(read.nextInt());
-				
+				setNumCancionesA(Integer.parseInt(read.nextLine()));
 				System.out.println("\tIntroduce el número de canciones de la cara B: ");
-				setNumCancionesB(read.nextInt());
+				setNumCancionesB(Integer.parseInt(read.nextLine()));
+
 				fallo = false;
 			}
-			catch(NumberFormatException ex){
-				System.out.println("\tDebe introducir un número correcto:");
+			catch(IllegalArgumentException ex){
+				System.out.println("\tDebe introducir un número correcto");
 				fallo = true;
 			}
 		}while(fallo);
+		
+		
 	}
 	
 	public Casete(String album, String autor){

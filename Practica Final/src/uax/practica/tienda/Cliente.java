@@ -3,7 +3,7 @@ package uax.practica.tienda;
 import java.util.Scanner;
 
 /**
- * Clase principal de entrada al programa
+ * Clase Cliente que guarda la información de los usuarios que desean adquirir música de la tienda
  * @version v0.1 	24 Junio 2013
  * @author Alberto Hidalgo
  */
@@ -65,9 +65,9 @@ public class Cliente {
 	public String imprimir(){
 		String cad = "Cliente\n";
 		
-		cad += 	"Nombre: " + getNombre() + "\n" +
-				"Apellidos: " + getApellidos()[0] + " " + getApellidos()[1] + "\n" +
-				"Código: " + getCodigo() + "\n";
+		cad += 	"\tNombre: " + getNombre() + "\n" +
+				"\tApellidos: " + getApellidos()[0] + " " + getApellidos()[1] + "\n" +
+				"\tCódigo: " + getCodigo() + "\n";
 		
 		return cad;
 	}

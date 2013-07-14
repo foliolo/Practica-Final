@@ -1,6 +1,5 @@
 package uax.practica.musica;
 
-import java.util.InputMismatchException;
 
 /**
  * Clase CD que hereda de Música y añade la propiedad: número de canciones. 
@@ -16,15 +15,12 @@ public class CD extends Musica {
 		do{
 			try{
 				System.out.println("\tIntroduce el número de canciones: ");
-				setNumCanciones(read.nextInt());
+				setNumCanciones(Integer.parseInt(read.nextLine()));
+
 				fallo = false;
 			}
-			catch(NumberFormatException ex){
-				System.out.println("\tDebe introducir un número correcto:");
-				fallo = true;
-			}
-			catch(InputMismatchException ex){
-				System.out.println("\tDebe introducir un número correcto en la fecha");
+			catch(IllegalArgumentException ex){
+				System.out.println("\tDebe introducir un número correcto");
 				fallo = true;
 			}
 		}while(fallo);

@@ -5,7 +5,8 @@ import java.util.Calendar;
 import java.util.InputMismatchException;
 
 /**
- * Clase principal de entrada al programa
+ * Clase Vinilo que hereda de Música y añade la propiedad: "segunda mano" para saber en qué fecha
+ * se incorporó el Vinilo a la tienda. 
  * @version v0.1 	25 Junio 2013
  * @author Alberto Hidalgo
  */
